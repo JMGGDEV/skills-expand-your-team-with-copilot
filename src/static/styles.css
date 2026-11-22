@@ -32,6 +32,35 @@
   --info-light: #d1ecf1;
 }
 
+[data-theme="dark"] {
+  --primary: #7986cb;
+  --primary-light: #9fa8da;
+  --primary-dark: #3949ab;
+  --primary-text: #ffffff;
+
+  --secondary: #ffb74d;
+  --secondary-light: #ffe082;
+  --secondary-dark: #f57c00;
+  --secondary-text: #212121;
+
+  --background: #121212;
+  --surface: #1e1e1e;
+  --text-primary: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --border: #424242;
+  --border-light: #303030;
+  --border-focus: #616161;
+
+  --success: #81c784;
+  --success-light: #263e28;
+  --warning: #ffb74d;
+  --warning-light: #4a3b1f;
+  --error: #ef5350;
+  --error-light: #4a2323;
+  --info: #80cbc4;
+  --info-light: #263b3a;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -48,6 +77,24 @@ body {
   padding: 12px;
   background-color: var(--background);
   font-size: 0.9rem;
+}
+
+body,
+.modal-content,
+.activity-card,
+.sidebar-filters,
+.search-box input {
+  transition: background-color 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.search-box input {
+  background-color: var(--surface);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .activity-tag {
+  filter: brightness(0.8);
 }
 
 header {
@@ -620,7 +667,30 @@ footer {
 #user-controls {
   position: absolute;
   top: 10px;
+  right: 115px;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 10px;
   right: 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 0.85rem;
+  color: #ffffff;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.theme-toggle-icon {
+  font-size: 1rem;
+  line-height: 1;
 }
 
 #user-status {
